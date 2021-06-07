@@ -5,7 +5,7 @@
       <div class="nav">
           <ul>
               <li v-for="(link, index) in links" :key=index>
-                  <a href="link.url" :class="link.current ? 'active' : ''">{{link.text}}</a>
+                  <a :href="link.url" :class="link.current ? 'active' : ''">{{link.text}}</a>
               </li>
           </ul>
       </div>
@@ -80,6 +80,9 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 130px;
+        background-color: white;
+        width: 70%;
+        margin: auto;
     }
 
     img {
