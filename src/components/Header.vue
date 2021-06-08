@@ -79,7 +79,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 130px;
+        height: 120px;
         background-color: white;
     }
 
@@ -96,7 +96,8 @@ export default {
             margin: 0 15px;
 
             a {
-                height: 130px;
+                height: 120px;
+                font-size: 14px;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: bold;
