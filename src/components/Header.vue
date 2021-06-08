@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="container header">
       <img src="../assets/img/dc-logo.png" alt="logo dc">
 
       <div class="nav">
@@ -81,8 +81,6 @@ export default {
         align-items: center;
         height: 130px;
         background-color: white;
-        width: 70%;
-        margin: auto;
     }
 
     img {

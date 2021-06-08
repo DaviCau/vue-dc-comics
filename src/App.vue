@@ -31,4 +31,9 @@ export default {
   body {
     font-family: 'Roboto', sans-serif;
   }
+
+  .container {
+    width: 70%;
+    margin: auto;
+  }
 </style>

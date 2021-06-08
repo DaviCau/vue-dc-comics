@@ -1,9 +1,14 @@
 <template>
     <div class="footer">
         <div class="footer-top">
-            <div class="container">
+            <div class="container footer-container">
                 <div class="links">
-
+                    <ul v-for="(section, index) in footerLinks" :key="index">
+                        <li class="list-title">{{section.sectionTitle}}</li>
+                        <li v-for="(link, indexLink) in footerLinks[index].sectionLinks" :key="indexLink">
+                            <a :href="link.url">{{link.text}}</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="logo-bg">
                     <img src="../assets/img/dc-logo-bg.png" alt="logo dc">
@@ -11,19 +16,39 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="container">
+            <div class="container footer-container">
                 <div class="sign-up">
                     <button>Sign-up now&excl;</button>
-                    <div class="socials">
-                        <!-- <ul class="social-links">
-                            <li>Follow Us</li>
-                            <li v-for="(social, index) in socials" :key=index>
-                                <a :href="social.url">
-                                    <img :src="'../assets/img/footer-'+ social.socialName +'.png'" :alt="social.text">
-                                </a>
-                            </li>
-                        </ul> -->
-                    </div>
+                </div>
+                <div class="socials">
+                    <ul class="social-links">
+                        <li class="list-title">Follow Us</li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-facebook.png" alt="facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-twitter.png" alt="twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-youtube.png" alt="youtube">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-pinterest.png" alt="pinterest">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-periscope.png" alt="periscope">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -35,26 +60,126 @@ export default {
     name: "Footer",
     data: function() {
         return {
-            socials: [
+            footerLinks: [
                 {
-                    socialName: "facebook",
-                    url: "#",
+                    sectionTitle: "DC COMICS",
+                    sectionLinks: [
+                        {
+                            text: "Characters",
+                            url: "#"
+                        },
+                        {
+                            text: "Comics",
+                            url: "#"
+                        },
+                        {
+                            text: "Movies",
+                            url: "#"
+                        },
+                        {
+                            text: "TV",
+                            url: "#"
+                        },
+                        {
+                            text: "Games",
+                            url: "#"
+                        },
+                        {
+                            text: "Videos",
+                            url: "#"
+                        },
+                        {
+                            text: "News",
+                            url: "#"
+                        }
+                    ]
                 },
                 {
-                    socialName: "twitter",
-                    url: "#",
+                    sectionTitle: "SHOP",
+                    sectionLinks: [
+                        {
+                            text: "Shop DC",
+                            url: "#"
+                        },
+                        {
+                            text: "CoShop DC Collectibles",
+                            url: "#"
+                        }
+                    ]
                 },
                 {
-                    socialName: "youtube",
-                    url: "#",
+                    sectionTitle: "DC",
+                    sectionLinks: [
+                        {
+                            text: "Terms Of Use",
+                            url: "#"
+                        },
+                        {
+                            text: "Privacy policy (New)",
+                            url: "#"
+                        },
+                        {
+                            text: "Ad Choices",
+                            url: "#"
+                        },
+                        {
+                            text: "Advertising",
+                            url: "#"
+                        },
+                        {
+                            text: "Jobs",
+                            url: "#"
+                        },
+                        {
+                            text: "Subscriptions",
+                            url: "#"
+                        },
+                        {
+                            text: "Talent Workshops",
+                            url: "#"
+                        },
+                        {
+                            text: "CPSC Certificates",
+                            url: "#"
+                        },
+                        {
+                            text: "Ratings",
+                            url: "#"
+                        },
+                        {
+                            text: "Shop Help",
+                            url: "#"
+                        },
+                        {
+                            text: "Contact Us",
+                            url: "#"
+                        }
+                    ]
                 },
                 {
-                    socialName: "pinterest",
-                    url: "#",
-                },
-                {
-                    socialName: "periscope",
-                    url: "#",
+                    sectionTitle: "SITES",
+                    sectionLinks: [
+                        {
+                            text: "DC",
+                            url: "#"
+                        },
+                        {
+                            text: "MAD Magazine",
+                            url: "#"
+                        },
+                        {
+                            text: "DC Kids",
+                            url: "#"
+                        },
+                        {
+                            text: "DC Universe",
+                            url: "#"
+                        },
+                        {
+                            text: "DC Power Visa",
+                            url: "#"
+                        },
+                    ]
                 }
             ]
         }
@@ -63,9 +188,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .container {
-        width: 70%;
-        margin: auto;
+    .footer-container {
         display: flex;
         justify-content: space-between;
     }
@@ -78,9 +201,31 @@ export default {
     }
 
     .links {
+        height: 370px;
         margin: 35px 0 50px;
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
+
+        ul {
+            list-style: none;
+            margin-right: 50px;
+            .list-title {
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                padding: 20px 0 15px;
+            }
+            a {
+                color: lightgray;
+                text-decoration: none;
+                font-size: 12px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     .logo-bg {
@@ -93,8 +238,6 @@ export default {
     .footer-bottom {
         background-color: #303030;
         padding: 30px;
-        display: flex;
-        justify-content: space-between;
     }
 
     .sign-up button {
@@ -105,5 +248,27 @@ export default {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 16px;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 30%;
+
+        .social-links {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .list-title {
+                color: #0282f3;
+                font-size: 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
     }
 </style>

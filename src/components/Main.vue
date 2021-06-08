@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <div class="main-content">
+        <div class="container">
             <h2>Content</h2>
         </div>
     </div>
@@ -20,7 +20,5 @@ export default {
     }
 
     .main-content {
-        width: 70%;
-        margin: auto;
     }
 </style>
