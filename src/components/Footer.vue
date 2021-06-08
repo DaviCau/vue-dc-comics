@@ -202,7 +202,7 @@ export default {
 
     .links {
         height: 370px;
-        margin: 35px 0 50px;
+        margin: 15px 0 50px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
